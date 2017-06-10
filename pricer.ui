@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Pricer</class>
+ <widget class="QMainWindow" name="Pricer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Pricer</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>600</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>5</number>
+    </property>
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="tab_euro">
+     <attribute name="title">
+      <string>European</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>381</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="form_euro">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="s0Label">
+         <property name="text">
+          <string>Spot Price</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="s0LineEdit">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="strikePriceLabel">
+         <property name="text">
+          <string>Strike</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="strikePriceLineEdit"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="nonRiskInterestRateLabel">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Risk-free &lt;br/&gt;Interest Rate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="nonRiskInterestRateLineEdit"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="expiryTimeLabel">
+         <property name="text">
+          <string>Expiry Time</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="expiryTimeLineEdit"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="volatilityLabel">
+         <property name="text">
+          <string>Volatility</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="volatilityLineEdit"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="repoRateLabel">
+         <property name="text">
+          <string>Repo Rate</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="repoRateLineEdit"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="optionTypeLabel">
+         <property name="text">
+          <string>Option Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QComboBox" name="optionTypeComboBox">
+         <item>
+          <property name="text">
+           <string>call</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>put</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="button_euro">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>225</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculate</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>265</y>
+        <width>59</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Result:</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="res_euro">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>260</y>
+        <width>331</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_amri">
+     <attribute name="title">
+      <string>American</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>391</width>
+        <height>251</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="form_amri">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="s0Label_2">
+         <property name="text">
+          <string>S(0)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="s0_amri"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="strikePriceLabel_2">
+         <property name="text">
+          <string>Strike</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="strikePrice_amri"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="nonRiskInterestRateLabel_2">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Risk-free&lt;br/&gt;Interest Rate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="nonRiskInterestRate_amri"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="expiryTimeLabel_2">
+         <property name="text">
+          <string>Expiry Time</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="expiryTime_amri"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="volatilityLabel_2">
+         <property name="text">
+          <string>Volatility</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="volatility_amri"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="optionTypeLabel_2">
+         <property name="text">
+          <string>Option Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="optionType_amri">
+         <item>
+          <property name="text">
+           <string>call</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>put</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="sizeBinomialLabel">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Step#(N)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QSpinBox" name="sizeBinomial">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>1000</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="button_amri">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>230</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculate</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="res_amri">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>270</y>
+        <width>321</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>270</y>
+        <width>59</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Result:</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_ga">
+     <attribute name="title">
+      <string>G_Asian</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>371</width>
+        <height>284</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="form_ga">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="s0Label_4">
+         <property name="text">
+          <string>Spot Price</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="s0_ga"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="strikePriceLabel_4">
+         <property name="text">
+          <string>Strike</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="strikePrice_ga"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="nonRiskInterestRateLabel_4">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Risk-free&lt;br/&gt;Interest Rate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="nonRiskInterestRate_ga"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="expiryTimeLabel_4">
+         <property name="text">
+          <string>Expiry Time</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="expiryTime_ga"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="volatilityLabel_3">
+         <property name="text">
+          <string>Volatility</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="volatility_ga"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="optionTypeLabel_4">
+         <property name="text">
+          <string>Option Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="optionType_ga">
+         <item>
+          <property name="text">
+           <string>call</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>put</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="sizeBinomialLabel_2">
+         <property name="text">
+          <string>Observation
+Times</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QSpinBox" name="obsTimes_ga">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>1000</number>
+         </property>
+         <property name="singleStep">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="pathInMonteCarloLabel">
+         <property name="text">
+          <string>Path# in
+Monte Carlo</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QSpinBox" name="M_ga">
+         <property name="minimum">
+          <number>10000</number>
+         </property>
+         <property name="maximum">
+          <number>100000</number>
+         </property>
+         <property name="singleStep">
+          <number>10000</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="button_ga">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>270</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculate</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="res_ga">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>310</y>
+        <width>321</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>310</y>
+        <width>59</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Result:</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_aa">
+     <attribute name="title">
+      <string>A_Asian</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>371</width>
+        <height>284</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="form_aa">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="s0Label_5">
+         <property name="text">
+          <string>Spot Price</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="s0_aa"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="strikePriceLabel_5">
+         <property name="text">
+          <string>Strike</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="strikePrice_aa"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="nonRiskInterestRateLabel_5">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Risk-free&lt;br/&gt;Interest Rate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="nonRiskInterestRate_aa"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="expiryTimeLabel_5">
+         <property name="text">
+          <string>Expiry Time</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="expiryTime_aa"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="volatilityLabel_4">
+         <property name="text">
+          <string>Volatility</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="volatility_aa"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="optionTypeLabel_5">
+         <property name="text">
+          <string>Option Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="optionType_aa">
+         <item>
+          <property name="text">
+           <string>call</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>put</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="sizeBinomialLabel_3">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Observation&lt;br/&gt;Times&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QSpinBox" name="obsTimes_aa">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>1000</number>
+         </property>
+         <property name="singleStep">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="pathInMonteCarloLabel_2">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Path# in&lt;br/&gt;Monte Carlo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QSpinBox" name="M_aa">
+         <property name="minimum">
+          <number>10000</number>
+         </property>
+         <property name="maximum">
+          <number>100000</number>
+         </property>
+         <property name="singleStep">
+          <number>10000</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>310</y>
+        <width>59</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Result:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_aa">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>270</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculate</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="res_aa">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>310</y>
+        <width>321</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_gb">
+     <attribute name="title">
+      <string>G_Basket</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_11">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>391</width>
+        <height>357</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="form_gb">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="s0Label_11">
+         <property name="text">
+          <string>S1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="s1_gb"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="sigma1Label">
+         <property name="text">
+          <string>sigma1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="sigma1_gb"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="s2Label">
+         <property name="text">
+          <string>S2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="s2_gb"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="sigma2Label">
+         <property name="text">
+          <string>sigma2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="sigma2_gb"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="pLabel">
+         <property name="text">
+          <string>rho</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="p_gb"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="strikePriceLabel_11">
+         <property name="text">
+          <string>Strike</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="strikePrice_gb"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="nonRiskInterestRateLabel_11">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Risk-free&lt;br/&gt;Interest Rate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="nonRiskInterestRate_gb"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="expiryTimeLabel_11">
+         <property name="text">
+          <string>Expiry Time</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="expiryTime_gb"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="optionTypeLabel_11">
+         <property name="text">
+          <string>Option Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QComboBox" name="optionType_gb">
+         <item>
+          <property name="text">
+           <string>call</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>put</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="pathInMonteCarloLabel_5">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Path# in&lt;br/&gt;Monte Carlo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QSpinBox" name="M_gb">
+         <property name="minimum">
+          <number>10000</number>
+         </property>
+         <property name="maximum">
+          <number>100000</number>
+         </property>
+         <property name="singleStep">
+          <number>10000</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="button_gb">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>320</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculate</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="res_gb">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>360</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>360</y>
+        <width>59</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Result:</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_ab">
+     <attribute name="title">
+      <string>A_Basket </string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_12">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>391</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="form_ab">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="s0Label_12">
+         <property name="text">
+          <string>S1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="s1_ab"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="s2Label_2">
+         <property name="text">
+          <string>S2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="s2_ab"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="strikePriceLabel_12">
+         <property name="text">
+          <string>Strike</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="strikePrice_ab"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="nonRiskInterestRateLabel_12">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Risk-free&lt;br/&gt;Interest Rate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="nonRiskInterestRate_ab"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="expiryTimeLabel_12">
+         <property name="text">
+          <string>Expiry Time</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="expiryTime_ab"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="optionTypeLabel_12">
+         <property name="text">
+          <string>Option Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QComboBox" name="optionType_ab">
+         <item>
+          <property name="text">
+           <string>call</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>put</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="pathInMonteCarloLabel_6">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Path# in&lt;br/&gt;Monte Carlo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QSpinBox" name="M_ab">
+         <property name="minimum">
+          <number>10000</number>
+         </property>
+         <property name="maximum">
+          <number>100000</number>
+         </property>
+         <property name="singleStep">
+          <number>10000</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="sigma1Label_2">
+         <property name="text">
+          <string>sigma1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="sigma1_ab"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="sigma2Label_2">
+         <property name="text">
+          <string>sigma2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="sigma2_ab"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="pLabel_2">
+         <property name="text">
+          <string>rho</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="p_ab"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>360</y>
+        <width>59</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Result:</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="res_ab">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>360</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_ab">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>320</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculate</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_iv">
+     <attribute name="title">
+      <string>Implied Volatility</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>371</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="form_iv">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLabel" name="s0Label_3">
+         <property name="text">
+          <string>S(0)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="s0_iv"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="strikePriceLabel_3">
+         <property name="text">
+          <string>Strike Price</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="strikePrice_iv"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="nonRiskInterestRateLabel_3">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Risk-free&lt;br/&gt;Interest Rate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="nonRiskInterestRate_iv"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="expiryTimeLabel_3">
+         <property name="text">
+          <string>Expiry Time</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="expiryTime_iv"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="repoRateLabel_2">
+         <property name="text">
+          <string>Repo Rate</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="repoRate_iv"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="optionTypeLabel_3">
+         <property name="text">
+          <string>Option Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="optionType_iv">
+         <item>
+          <property name="text">
+           <string>call</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>put</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="marketPriceLabel">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Option&lt;br/&gt;Premium&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="marketPrice"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="button_iv">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>230</y>
+        <width>113</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Calculate</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="res_iv">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>270</y>
+        <width>321</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>270</y>
+        <width>59</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Result:</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
