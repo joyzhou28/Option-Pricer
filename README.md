@@ -1,26 +1,7 @@
 # Pricer2
-## in deatail
-- ordinary 
-- exotic 
-- basket
-pricer for various options
+- American(binomial tree)/European(Black-Shole formula) put/call option
+- Asian geometric/arithmetric option
+- Basket geometric/arithmetric option
+- Newton_Ralph method to solve implied volatility
 
-common.cpp and common.h is are included files
-```c++
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
-```
-figures don't work
-
----
-> sb said "you are"
-> > adad
-> > > adadada
-
-adadadasd;
-
-
------------
+common.h and common.cpp for 
